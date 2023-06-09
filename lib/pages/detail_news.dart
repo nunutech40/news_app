@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article.dart';
+import 'package:news_app/pages/detail_webview.dart';
 
 class DetailNews extends StatelessWidget {
   static const routeName = '/article_detail';
@@ -20,7 +21,7 @@ class DetailNews extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(children: [
               Text(article.description),
-              Divider(
+              const Divider(
                 color: Colors.grey,
               ),
               Text(
@@ -42,7 +43,10 @@ class DetailNews extends StatelessWidget {
               const SizedBox(height: 10),
               ElevatedButton(
                 child: const Text('Read more'),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, DetailWebview.routeName,
+                      arguments: article.url);
+                },
               ),
             ]),
           )
