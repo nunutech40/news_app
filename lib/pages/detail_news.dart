@@ -16,7 +16,10 @@ class DetailNews extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Image.network(article.urlToImage),
+          Hero(
+            tag: article.urlToImage,
+            child: Image.network(article.urlToImage),
+          ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(children: [

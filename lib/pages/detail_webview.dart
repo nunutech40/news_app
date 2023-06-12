@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/widgets/CustomScaffold.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class DetailWebview extends StatelessWidget {
@@ -9,8 +10,7 @@ class DetailWebview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = WebViewController()..loadRequest(Uri.parse(url));
-    return Scaffold(
-      appBar: AppBar(title: const Text('News App')),
+    return CustomScaffold(
       body: WebViewWidget(controller: controller),
     );
   }
